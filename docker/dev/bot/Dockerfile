@@ -3,6 +3,7 @@ FROM node:20
 ARG UID
 ARG GID
 ARG NODE_ENV
+ARG PORT
 
 ENV NODE_ENV=${NODE_ENV}
 
@@ -15,5 +16,7 @@ RUN touch /var/log/lock.log
 WORKDIR /var/www/bot
 
 USER node
+
+EXPOSE ${PORT}
 
 CMD pm2 start && tail -f /var/log/lock.log
