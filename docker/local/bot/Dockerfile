@@ -10,7 +10,7 @@ RUN yarn global add pm2 cross-env
 
 RUN groupmod -o -g ${GID} node && usermod -o -u ${UID} -g node node
 
-WORKDIR /var/www/frontend
+WORKDIR /var/www/bot
 
 USER node
 
