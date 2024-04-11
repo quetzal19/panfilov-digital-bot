@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  bob-bot:
+    container_name: panfilov-digital-bot
+    build:
+      context: ../bot
+      dockerfile: ../docker/dev/bot/Dockerfile
+      args:
+        GID: ${GID}
+        UID: ${UID}
+        NODE_ENV: ${NODE_ENV}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ../bot:/var/www/bot
+    networks:
+      ratio:
+        ipv4_address: 172.24.205.4
+
+networks:
+  ratio:
+    external: true
