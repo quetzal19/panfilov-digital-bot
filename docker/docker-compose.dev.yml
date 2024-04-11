@@ -10,6 +10,7 @@ services:
         GID: ${GID}
         UID: ${UID}
         NODE_ENV: ${NODE_ENV}
+        PORT: ${PORT}
     restart: unless-stopped
     environment:
       NODE_ENV: ${NODE_ENV}

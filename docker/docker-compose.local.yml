@@ -10,10 +10,13 @@ services:
         GID: ${GID}
         UID: ${UID}
         NODE_ENV: ${NODE_ENV}
+        PORT: ${PORT}
     environment:
       NODE_ENV: ${NODE_ENV}
     volumes:
       - ../bot:/var/www/bot
+    ports:
+      - ${PORT}:${PORT}
     networks:
       - ratio
 
