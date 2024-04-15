@@ -25,13 +25,13 @@
 ```dotenv
 # Окружение для MakeFile: local, dev, prod
 ENV=local
-PREFIX=panfilov-digital
+PREFIX=panfilov-digital-bot
 ```
 
 В директории `docker` по аналогии нужно скопировать `.env.example` в `.env` и заполнить:
 ```dotenv
 # Порт, на котором будет работать бэк
-PORT=3000
+PORT=10000
 
 # Режим запуска приложения (production/development)
 NODE_ENV=development
