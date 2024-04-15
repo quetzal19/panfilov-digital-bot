@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  panfilov-digital-bot:
+    container_name: panfilov-digital-bot
+    build:
+      context: ../bot
+      dockerfile: ../docker/local/bot/Dockerfile
+      args:
+        GID: ${GID}
+        UID: ${UID}
+        NODE_ENV: ${NODE_ENV}
+        PORT: ${PORT}
+    environment:
+      NODE_ENV: ${NODE_ENV}
+    volumes:
+      - ../bot:/var/www/bot
+    ports:
+      - ${PORT}:${PORT}
+    networks:
+      - ratio
+
+networks:
+  ratio:
+    driver: bridge
