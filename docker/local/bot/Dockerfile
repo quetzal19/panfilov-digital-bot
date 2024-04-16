@@ -18,4 +18,4 @@ USER node
 
 EXPOSE ${PORT}
 
-CMD tail -f /var/log/lock.log
+CMD pm2 start && tail -f /var/log/lock.log

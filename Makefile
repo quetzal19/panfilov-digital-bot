@@ -24,7 +24,7 @@ down: ## Остановка всех контейнеров проекта
 	docker compose -f docker/docker-compose.$(ENV).yml down
 
 rb-bot: ## Пересобрать контейнер бота
-	@docker compose -f docker/docker-compose.$(ENV).yml up -d --build $(PREFIX)
+	@docker compose -f docker/docker-compose.$(ENV).yml up -d --build
 	@docker compose -f docker/docker-compose.$(ENV).yml down
 	@docker compose -f docker/docker-compose.$(ENV).yml up -d
 
